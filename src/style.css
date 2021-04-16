@@ -5,13 +5,15 @@
 }
 
 body {
+  background-color: #7f5a83;
+background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
+
   font-family: 'Roboto', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
   margin: 0;
   position: relative;
 }
@@ -37,6 +39,102 @@ body {
   transform: translateY(-32px);
 }
 
+.modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, .8);
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+.frame {
+  width: 536px;
+  height: 63px;
+  background-color: red;
+  background: url("img/frame.png");
+  margin-right: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px;
+}
+
+.users {
+  width: 472px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.square {
+  position: relative;
+  background: url("img/square.png");
+  width: 50px;
+  height: 50px;
+}
+
+.user {
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: url("img/user.png");
+  width: 28px;
+  height: 38px;
+}
+
+.add {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(25%, -20%);
+  background: url("img/add.png");
+  width: 22px;
+  height: 22px;
+}
+
+
+
+
+.controls {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-center;
+}
+
+.icon {
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.icon:hover {
+  opacity: .9;
+}
+
+.icon:active {
+  transform: scale(.95)
+}
+
+.icon > img {
+-webkit-user-drag: none;
+}
+
+button {
+  background: none;
+  border: none;
+  margin-top: -5px;
+}
+button:focus {
+  outline: none;
+}
 @keyframes move{
   0% {
     offset-distance: 0%;

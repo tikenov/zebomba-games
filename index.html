@@ -13,11 +13,35 @@
   <div id="loader">
     <div id="spinner"></div>
   </div>
+  <audio id="click-sound" src="src/click.mp3"></audio>
+
   <div id="map">
     <div id="model"></div>
+    <div class="controls">
+      <div class="frame">
+        <img src="src/img/left.png" height="30px" class="icon" id="left" alt="">
+        <div class="users">
+          <div class="square icon"></div>
+          <div class="square icon"></div>
+          <div class="square icon"></div>
+          <div class="square icon"></div>
+          <div class="square icon"></div>
+          <div class="square icon"></div>
+          <div class="square icon"></div>
+          <div class="square icon"></div>
+        </div>
+        <img src="src/img/right.png" height="30px" class="icon" id="right" alt="">
+      </div>
+      <div class="icon"><img src="/src/img/chat.png"></div>
+      <button class="icon" id="btn-backward"><img src="/src/img/backward.png"></button>
+      <button class="icon" id="btn-forward"><img src="/src/img/forward.png"></button>
+      <div class="icon"><img src="/src/img/mail.png"></div>
+      <div class="icon" id="rating"><img src="/src/img/rating.png"></div>
+    </div>
   </div>
-  <button id="btn-forward">click1</button>
-  <button id="btn-backward">click2</button>
+  <div id="modal" class="modal">
+
+  </div>
   <script src="src/data.js"></script>
   <script src="script.js"></script>
 </body>
