@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  position: relative;
+}
+
+#map {
+  position: relative;
+  width: 980px;
+  height: 630px;
+  background: url("img/map.png");
+}
+
+#model {
+  position: absolute;
+  width: 21px;
+  height: 69px;
+  background: red;
+  border-radius: 50%;
+  animation-timing-function:  linear;
+  animation-fill-mode: forwards;
+  animation-name: move;
+  background: url("img/model.png");
+  offset-rotate: 0deg;
+  transform: translateY(-32px);
+}
+
+@keyframes move{
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
