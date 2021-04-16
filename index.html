@@ -14,33 +14,49 @@
     <div id="spinner"></div>
   </div>
   <audio id="click-sound" src="src/click.mp3"></audio>
-
-  <div id="map">
-    <div id="model"></div>
-    <div class="controls">
-      <div class="frame">
-        <img src="src/img/left.png" height="30px" class="icon" id="left" alt="">
-        <div class="users">
-          <div class="square icon"></div>
-          <div class="square icon"></div>
-          <div class="square icon"></div>
-          <div class="square icon"></div>
-          <div class="square icon"></div>
-          <div class="square icon"></div>
-          <div class="square icon"></div>
-          <div class="square icon"></div>
+  <main>
+    <div id="map">
+      <div id="model"></div>
+      <div class="controls">
+        <div class="frame">
+          <img src="src/img/left.png" height="30px" class="icon" id="left" alt="">
+          <div class="users">
+            <div class="square icon"></div>
+            <div class="square icon"></div>
+            <div class="square icon"></div>
+            <div class="square icon"></div>
+            <div class="square icon"></div>
+            <div class="square icon"></div>
+            <div class="square icon"></div>
+            <div class="square icon"></div>
+          </div>
+          <img src="src/img/right.png" height="30px" class="icon" id="right" alt="">
         </div>
-        <img src="src/img/right.png" height="30px" class="icon" id="right" alt="">
+        <div class="icon"><img src="/src/img/chat.png"></div>
+        <button class="icon" id="btn-backward"><img src="/src/img/backward.png"></button>
+        <button class="icon" id="btn-forward"><img src="/src/img/forward.png"></button>
+        <div class="icon"><img src="/src/img/mail.png"></div>
+        <div class="icon" id="rating"><img src="/src/img/rating.png"></div>
       </div>
-      <div class="icon"><img src="/src/img/chat.png"></div>
-      <button class="icon" id="btn-backward"><img src="/src/img/backward.png"></button>
-      <button class="icon" id="btn-forward"><img src="/src/img/forward.png"></button>
-      <div class="icon"><img src="/src/img/mail.png"></div>
-      <div class="icon" id="rating"><img src="/src/img/rating.png"></div>
     </div>
-  </div>
+  </main>
   <div id="modal" class="modal">
-
+    <div class="rating">
+      <div class="rating-title">
+        Рейтинг игоков
+      </div>
+      <div class="rating-close icon" id="rating-close">
+      </div>
+      <div class="tab tab1 active">Недельный</div>
+      <div class="tab tab2">Общий</div>
+      <ul class="rating-inner" id="rating-inner">
+        <li id="inner-title">
+          <span class="place">Место</span>
+          <span class="name">Имя Фамилия</span>
+          <span class="experience">Опыт</span>
+        </li>
+      </ul>
+    </div>
   </div>
   <script src="src/data.js"></script>
   <script src="script.js"></script>

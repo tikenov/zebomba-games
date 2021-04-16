@@ -1,4 +1,4 @@
-const { position, paths, list } = data;
+const { position, paths, list, rating, friends } = data;
 const clickSound = document.getElementById("click-sound");
 const icons = document.querySelectorAll(".icon");
 const squares = document.querySelectorAll(".square");
@@ -7,10 +7,13 @@ const backward = document.getElementById("btn-backward");
 const left = document.getElementById("left");
 const right = document.getElementById("right");
 const ratingBtn = document.getElementById("rating");
+const ratingCloseBtn = document.getElementById("rating-close");
+const ratingInner = document.getElementById("rating-inner");
 const map = document.getElementById("map");
 const model = document.getElementById("model");
 const modal = document.getElementById("modal");
-const stepDuration = 500;
+const stepDuration = 700;
+const tabs = document.querySelectorAll('.tab');
 
 let currentListItem = 0;
 let currentStep = 0;
@@ -31,14 +34,12 @@ left.addEventListener('click', () => {
     if (currentListItem == list.length - 1) return;
     resetSquares();
     currentListItem++;
-    console.log(currentListItem);
     setSquares();
 });
 right.addEventListener('click', () => {
     if (currentListItem == -7) return;
     resetSquares();
     currentListItem--;
-    console.log(currentListItem);
     setSquares();
 });
 
@@ -103,5 +104,29 @@ backward.addEventListener('click', function () {
 ratingBtn.addEventListener('click', function () {
     modal.classList.add('visible');
 });
+
+ratingCloseBtn.addEventListener('click', function () {
+    modal.classList.remove('visible');
+});
+
+rating.sort((a, b) => b.points - a.points);
+rating.forEach((item, i) => {
+    const node = document.createElement('li');
+    node.innerHTML = `
+        <span class="place">${i + 1}</span>
+        <span class="name">${item.name}</span>
+        <span class="experience">${item.points}</span>
+    `;
+    if (friends.some(e => e.id == item.id)) node.classList.add('friend');
+    ratingInner.appendChild(node);
+});
+
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        tabs.forEach(e => e.classList.remove('active'))
+        tab.classList.add('active')
+    })
+});
+
 setSquares();
 window.onload = () => document.getElementById('loader').style.display = 'none';
